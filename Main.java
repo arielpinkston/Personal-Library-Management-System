@@ -2,55 +2,48 @@ import java.util.Scanner;
 public class Main {
 
   public static void endMessage() {
-    System.out.print("\nAvailable commands: \n  enter \n  remove \n  list by genre \n  list alphabetically \n  list by borrower \n  write info to file \n  read info from file \n  quit \n--> ");
+    System.out.print("\nAvailable commands: \n  1. enter \n  2. remove \n  3. list by genre \n  4. list alphabetically \n  5. list by borrower \n  6. write info to file \n  7. read info from file \n  8. quit \n--> ");
   }
-  
+
   public static void main(String args[]) {
     Scanner scanner = new Scanner(System.in);
     Catalog catalog = new Catalog();
-    System.out.print("\nWelcome to the book catalog program!");
+    System.out.print("\nWelcome to the book catalog program! Please enter the corresponding number of your desired command.");
     endMessage();
 
     String userCmd;
     while (scanner.hasNextLine()) {
         userCmd = scanner.nextLine();
-        if (userCmd.equals("enter")) {
+        if (userCmd.equals("1")) {
             catalog.setInfo();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("remove")) {
+        else if (userCmd.equals("2")) {
             catalog.removeCatalogItem();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("list by genre")) {
+        else if (userCmd.equals("3")) {
             catalog.listByGenre();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("list alphabetically")) {
+        else if (userCmd.equals("4")) {
             catalog.sortByAuthorLastName();
             catalog.printCatalog();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("list by borrower")) {
+        else if (userCmd.equals("5")) {
             catalog.listByBorrower();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("write info to file")) {
+        else if (userCmd.equals("6")) {
             catalog.writeFile();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("read info from file")) {
+        else if (userCmd.equals("7")) {
             catalog.readFile();
             endMessage();
-            continue;
         }
-        else if (userCmd.equals("quit")) {
+        else if (userCmd.equals("8")) {
             System.out.println("\nGoodbye!\n");
             break;
         }
@@ -59,7 +52,7 @@ public class Main {
             endMessage();
             continue;
         }
-      
+
     }
   }
 }
